@@ -64,7 +64,7 @@ class Aplication:
 
     # Mensagem da Entry
     def mensagem(self):
-        self.entry.insert(END, 'Seu App Está funcionado corretamente ')
+        self.entry.insert(END, 'Seu App está funcionado corretamente ')
 
 
 Aplication()
