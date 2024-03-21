@@ -1,5 +1,6 @@
 from tkinter import *
 
+
 root = Tk()
 
 
@@ -7,6 +8,7 @@ class Aplication:
     def __init__(self):
         self.root = root  # Equivalência
         self.tela()  # toda a função "tela()"
+        self.menus()
         self.frames_tela()  # Chamada da função "frames_tela()"
         self.widiget_frame()  # Função dos botões.
         root.mainloop()  # loop
@@ -41,6 +43,21 @@ class Aplication:
         self.entry = Entry(self.frame, bg="#FFFFF0", fg="#000000",
                            font=('verdana', 8, 'bold'))  # codigo equivalente ao o "input"
         self.entry.place(relx=0.20, rely=0.20, relwidth=0.78, relheight=0.07)
+
+    def menus(self):
+        menubar = Menu(self.root)
+        self.root.config(menu=menubar)
+        filemenu = Menu(menubar)
+        filemenu2 = Menu(menubar)
+
+        # Variável para quitar
+        def sair(): self.root.destroy()
+
+        menubar.add_cascade(label="Sobre", menu=filemenu2)
+        menubar.add_cascade(label="Sair", menu=filemenu)
+
+        filemenu.add_command(label="Sair", command=sair)
+        filemenu2.add_command(label="Desenvolvido Pela Puritoka Zaybatsu Inc.")
 
 
 Aplication()
