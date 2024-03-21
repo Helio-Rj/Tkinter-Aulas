@@ -14,7 +14,7 @@ class Aplication:
     def tela(self):
         self.root.title("Coloque seu Título aqui ")  # definição do texto título
         self.root.config(bg="white")  # configuração de cores fundo
-        self.root.geometry("500x200")  # Altura e largura da tela em Pixels
+        self.root.geometry("400x200")  # Altura e largura da tela em Pixels
         self.root.resizable(True, True)  # Impede a maximização da janela quando em "False"
         self.root.maxsize(width=650, height=650)  # Máximo tamanho permitido.
         self.root.minsize(width=250, height=350)  # Minimo tamanho permitido.
@@ -36,6 +36,11 @@ class Aplication:
         self.lb_text = Label(self.frame, text="Clique no botão ", bg="#ffff00", fg="#4169E1",
                              font=('verdana', 9, 'bold'))
         self.lb_text.place(relx=0.05, rely=0.10)
+
+        # Entry
+        self.entry = Entry(self.frame, bg="#FFFFF0", fg="#000000",
+                           font=('verdana', 8, 'bold'))  # codigo equivalente ao o "input"
+        self.entry.place(relx=0.20, rely=0.20, relwidth=0.78, relheight=0.07)
 
 
 Aplication()
