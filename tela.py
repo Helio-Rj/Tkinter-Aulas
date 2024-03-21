@@ -26,11 +26,16 @@ class Aplication:
                          relheight=0.96)  # método para enquadramento de janela (Relative) por cordenadas
 
     def widiget_frame(self):
-        # Botão buscar
-        self.btn_buscar = Button(self.frame, text='Buscar', bd=2, bg="#4169E1", fg="#ffffff",
-                                 font=('verdana', 8, 'bold'),
-                                 )  # Esse botão fica dentro do frame 1
-        self.btn_buscar.place(relx=0.60, rely=0.30, relwidth=0.12, relheight=0.07)  # Posicionamento do botão limpar
+        # Botão GO
+        self.btn_go = Button(self.frame, text='GO', bd=2, bg="#4169E1", fg="#ffffff",
+                             font=('verdana', 8, 'bold'),
+                             )  # Esse botão fica dentro do frame 1
+        self.btn_go.place(relx=0.05, rely=0.20, relwidth=0.12, relheight=0.07)  # Posicionamento do botão limpar
+
+        # Label
+        self.lb_text = Label(self.frame, text="Clique no botão ", bg="#ffff00", fg="#4169E1",
+                             font=('verdana', 9, 'bold'))
+        self.lb_text.place(relx=0.05, rely=0.10)
 
 
 Aplication()
