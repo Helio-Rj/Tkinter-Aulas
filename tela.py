@@ -8,7 +8,7 @@ class Aplication:
     def __init__(self):
         self.root = root  # Equivalência
         self.tela()  # toda a função "tela()"
-        self.menus()
+        self.menus()  # Barra de menus
         self.frames_tela()  # Chamada da função "frames_tela()"
         self.widiget_frame()  # Função dos botões.
         root.mainloop()  # loop
@@ -21,15 +21,17 @@ class Aplication:
         self.root.maxsize(width=650, height=650)  # Máximo tamanho permitido.
         self.root.minsize(width=250, height=350)  # Minimo tamanho permitido.
 
+    # Frame
     def frames_tela(self):
         self.frame = Frame(self.root, bd=4, bg='#ffff00', highlightbackground='#1a0080',
                            highlightthickness=3)  # fina borda
         self.frame.place(relx=0.02, rely=0.02, relwidth=0.96,
                          relheight=0.96)  # método para enquadramento de janela (Relative) por cordenadas
 
+    # Widgets
     def widiget_frame(self):
         # Botão GO
-        self.btn_go = Button(self.frame, text='GO', bd=2, bg="#4169E1", fg="#ffffff",
+        self.btn_go = Button(self.frame, text='GO', bd=2, bg="#4169E1",command=self.mensagem, fg="#ffffff",
                              font=('verdana', 8, 'bold'),
                              )  # Esse botão fica dentro do frame 1
         self.btn_go.place(relx=0.05, rely=0.20, relwidth=0.12, relheight=0.07)  # Posicionamento do botão limpar
@@ -42,8 +44,9 @@ class Aplication:
         # Entry
         self.entry = Entry(self.frame, bg="#FFFFF0", fg="#000000",
                            font=('verdana', 8, 'bold'))  # codigo equivalente ao o "input"
-        self.entry.place(relx=0.20, rely=0.20, relwidth=0.78, relheight=0.07)
+        self.entry.place(relx=0.20, rely=0.20, relwidth=0.70, relheight=0.07)
 
+    # Barra de Menus
     def menus(self):
         menubar = Menu(self.root)
         self.root.config(menu=menubar)
@@ -58,6 +61,10 @@ class Aplication:
 
         filemenu.add_command(label="Sair", command=sair)
         filemenu2.add_command(label="Desenvolvido Pela Puritoka Zaybatsu Inc.")
+
+    # Mensagem da Entry
+    def mensagem(self):
+        self.entry.insert(END, 'Seu App Está funcionado corretamente ')
 
 
 Aplication()
