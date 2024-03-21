@@ -6,6 +6,10 @@ root = Tk()
 
 class Aplication:
     def __init__(self):
+        self.entry = None
+        self.lb_text = None
+        self.btn_go = None
+        self.frame = None
         self.root = root  # Equivalência
         self.tela()  # toda a função "tela()"
         self.menus()  # Barra de menus
@@ -31,7 +35,7 @@ class Aplication:
     # Widgets
     def widiget_frame(self):
         # Botão GO
-        self.btn_go = Button(self.frame, text='GO', bd=2, bg="#4169E1",command=self.mensagem, fg="#ffffff",
+        self.btn_go = Button(self.frame, text='GO', bd=2, bg="#4169E1", command=self.mensagem, fg="#ffffff",
                              font=('verdana', 8, 'bold'),
                              )  # Esse botão fica dentro do frame 1
         self.btn_go.place(relx=0.05, rely=0.20, relwidth=0.12, relheight=0.07)  # Posicionamento do botão limpar
@@ -68,3 +72,4 @@ class Aplication:
 
 
 Aplication()
+# Executar o comando "pyinstaller --onefile --noconsole --windowed tela.py" para fazer o Deploy
